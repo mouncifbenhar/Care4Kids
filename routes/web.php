@@ -18,4 +18,5 @@ Route::post('/login',[AuthController::class,'login']);
 
 
 Route::post('/logout',[AuthController::class,'logout'])->middleware('auth.check');
-
+Route::get('/profile',[ProfileController::class,'profile'])->middleware('auth.check');
+Route::post('/update_profile',[ProfileController::class,'update_profile'])->middleware('auth.check');

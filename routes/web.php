@@ -17,4 +17,5 @@ Route::get('/login',[AuthController::class,'Show_login_page']);
 Route::post('/login',[AuthController::class,'login']);
 
 
+Route::post('/logout',[AuthController::class,'logout'])->middleware('auth.check');
 

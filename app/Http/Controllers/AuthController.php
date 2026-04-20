@@ -12,6 +12,4 @@ class AuthController extends Controller
     {
         return view('Auth.register');
     }
-   
-
 }

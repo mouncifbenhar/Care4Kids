@@ -23,5 +23,11 @@ class AuthController extends Controller
       Auth::login($user);
       return redirect('/Dashboard');
     }
+    //login-----------------------------------------------
+    public function Show_login_page()
+    {
+        return view('Auth.login');
+    }
+   
  
 }

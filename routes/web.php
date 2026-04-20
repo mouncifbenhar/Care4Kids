@@ -13,4 +13,8 @@ Route::get('/Dashboard', function () {
 
 Route::get('/register',[AuthController::class,'Show_register_page']);
 Route::post('/register',[AuthController::class,'register']);
+Route::get('/login',[AuthController::class,'Show_login_page']);
+Route::post('/login',[AuthController::class,'login']);
+
+
 

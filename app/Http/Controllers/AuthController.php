@@ -28,6 +28,23 @@ class AuthController extends Controller
     {
         return view('Auth.login');
     }
-   
+    public function login(Request $request){
+           $validated = $request->validate([
+                 'email' => 'required|email',
+                 'password' => 'required|min:8'
+           ]);
+        if(Auth::attempt($validated)){
+          $request->session()->regenerate();
+          return redirect('/Dashboard');
+        }else{
+          return redirect()->back()->withErrors([
+             'message' => 'the email or the password is incorrect'
+          ]);
+        }   
+
+    }
+
+
+  
  
 }

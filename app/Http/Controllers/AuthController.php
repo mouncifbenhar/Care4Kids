@@ -12,4 +12,16 @@ class AuthController extends Controller
     {
         return view('Auth.register');
     }
+        public function register(Request $request)
+    {
+      $validated = $request->validate([
+            'name' => 'required|string|max:10',
+            'email' => 'required|email|unique:users',
+            'password' => 'required|min:8',
+      ]);
+      $user = User::create($validated);
+      Auth::login($user);
+      return redirect('/Dashboard');
+    }
+ 
 }

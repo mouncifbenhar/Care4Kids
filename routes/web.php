@@ -11,3 +11,6 @@ Route::get('/Dashboard', function () {
     return view('Dashboard');
 })->middleware('auth.check');
 
+Route::get('/register',[AuthController::class,'Show_register_page']);
+Route::post('/register',[AuthController::class,'register']);
+

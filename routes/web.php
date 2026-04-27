@@ -32,3 +32,5 @@ Route::get('/kids',[KidsController::class,'show_kids_page'])->middleware('auth.c
 Route::post('/Add_kid',[KidsController::class,'add_kid'])->middleware('auth.check');
 
 
+Route::get('/Medical_Folder/{kid}',[MedicalRecordController::class,'SHow_MedicalRecord_page'])->middleware('auth.check');
+

@@ -48,6 +48,15 @@ class KidsController extends Controller
     ));
 
     }
+    public function delete_kid($child){
 
-    
+    $child = auth()->user()->kids()->findOrFail($child);
+
+    $child->medications()->delete();
+    $child->appointments()->delete();
+    $child->vaccines()->delete();
+    $child->delete();
+
+    return redirect('/Dashboard')->with('success', 'Child and all related data deleted successfully');   
+    }
 }

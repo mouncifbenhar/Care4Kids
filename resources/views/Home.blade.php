@@ -29,9 +29,9 @@
         </div>
     </nav>
 
-    <section class="py-16">
+    <section class="py-0">
     <img src="https://i.pinimg.com/736x/eb/0a/cb/eb0acb34d3c13444984c5ae07a13e601.jpg"
-         class="w-screen h-[400px] object-cover shadow-lg">
+         class="w-screen h-[400px]  object-cover shadow-lg ">
     </section>
 
     
@@ -104,6 +104,5 @@
 
         </div>
     </section>
-
 </body>
 </html>

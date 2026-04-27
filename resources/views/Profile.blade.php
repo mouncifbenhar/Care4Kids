@@ -9,27 +9,7 @@
 
 <body class="min-h-screen">
 
-    <nav class="bg-white/80 backdrop-blur-md shadow-sm border-b border-gray-100">
-        <div class="max-w-6xl mx-auto px-6 py-3 flex items-center justify-between">
-
-            <h1 class="text-xl font-bold text-blue-700">
-                Care4Kids
-            </h1>
-
-            <a href="/Dashboard" class="text-gray-600 hover:text-blue-600 text-sm">
-                Dashboard
-            </a>
-
-            <form action="/logout" method="POST">
-                @csrf
-                <button type="submit"
-                    class="px-4 py-1.5 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
-                    Logout
-                </button>
-            </form>
-
-        </div>
-    </nav>
+  @include('navebar')
 
     <div class="flex items-center justify-center py-16 px-6">
 
@@ -64,19 +44,19 @@
               <div class="mt-4 bg-red-50 border border-red-200 text-red-600 p-3 rounded-xl text-sm">
                 <ul class="list-disc pl-4">
                     @foreach($errors->all() as $error)
-                        <li>{{$error}}</li>
-                    @endforeach
-                </ul>
-              </div>
-            @endif
+                            <li>{{$error}}</li>
+                        @endforeach
+                    </ul>
+                </div>
+                @endif
 
-            @if(session('success'))
-              <div class="mt-4 bg-green-50 border border-green-200 text-green-600 p-3 rounded-xl text-sm">
-                <ul class="list-disc pl-4">
-                        <li>{{session('success')}}</li>
-                </ul>
-              </div>
-            @endif
+                @if(session('success'))
+                <div class="mt-4 bg-green-50 border border-green-200 text-green-600 p-3 rounded-xl text-sm">
+                    <ul class="list-disc pl-4">
+                            <li>{{session('success')}}</li>
+                    </ul>
+                </div>
+                @endif
         </div>
 
     </div>

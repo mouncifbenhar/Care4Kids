@@ -25,4 +25,9 @@ class VaccinesController extends Controller
     
     return redirect()->back()->with('success_vaccine', 'vaccine added successfully');
 }
+    
+public function markAsRead(){
+    auth()->user()->unreadNotifications->markAsRead();
+    return redirect()->back();
+}
 }

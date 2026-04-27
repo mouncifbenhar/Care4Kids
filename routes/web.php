@@ -40,3 +40,4 @@ Route::post('/add_medication/{child}',[MedicationController::class,'add_medicati
 Route::get('/Appointments/{child}',[AppointmentController::class,'Appointments_page'])->middleware('auth.check');
 Route::post('/add_appointment/{child}',[AppointmentController::class,'add_appointment'])->middleware('auth.check');
 
+Route::get('/kids_Record/{child}',[KidsController::class,'show_kids_recrd'])->middleware('auth.check');

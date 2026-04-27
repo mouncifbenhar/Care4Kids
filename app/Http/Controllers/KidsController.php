@@ -28,5 +28,26 @@ class KidsController extends Controller
     }
     //--------------------------------------------------------------------------------------
 
-   
+    public function show_kids_recrd($kid){
+
+    $child = auth()->user()->kids()->findOrFail($kid);
+
+    $vaccines = $child->vaccines()->get();
+    $medications = $child->medications()->get();
+    $appointments = $child->appointments()->get();
+
+    $vcc_count = $vaccines->count();
+    $med_count = $medications->count();
+    $app_count = $appointments->count();
+
+    return view('kids_Record', compact(
+        'child', 
+        'vaccines', 'vcc_count',
+        'medications', 'med_count',
+        'appointments', 'app_count'
+    ));
+
+    }
+
+    
 }

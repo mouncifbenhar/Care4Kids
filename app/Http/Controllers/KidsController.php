@@ -7,5 +7,8 @@ use Illuminate\Http\Request;
 
 class KidsController extends Controller
 {
-  
+    public function show_kids_page(){
+        return view('Kids');
+    }
+   
 }

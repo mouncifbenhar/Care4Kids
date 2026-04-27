@@ -28,3 +28,5 @@ Route::post('/update_profile',[ProfileController::class,'update_profile'])->midd
 
 Route::get('/Dashboard',[DashboardController::class,'Dashboard'])->middleware('auth.check');
 
+Route::get('/kids',[KidsController::class,'show_kids_page'])->middleware('auth.check');
+

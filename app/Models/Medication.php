@@ -18,6 +18,9 @@ class Medication extends Model
     'notes',
 ];
 
-
+public function kid()
+{
+    return $this->belongsTo(Kid::class);
+}
 
 }

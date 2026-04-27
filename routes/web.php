@@ -37,4 +37,5 @@ Route::post('/Save_Record/{child}',[MedicalRecordController::class,'Save_Record'
 
 Route::post('/take_vaccine/{child}',[VaccinesController::class,'take_vaccine'])->middleware('auth.check');
 Route::post('/add_medication/{child}',[MedicationController::class,'add_medication'])->middleware('auth.check');
+Route::get('/Appointments/{child}',[AppointmentController::class,'Appointments_page'])->middleware('auth.check');
 

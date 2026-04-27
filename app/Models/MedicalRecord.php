@@ -13,6 +13,9 @@ class MedicalRecord extends Model
         'notes',
         'diagnosis'
     ];
-
+     public function kid()
+    {
+        return $this->belongsTo(Kid::class,'kid_id');
+    }
     
 }

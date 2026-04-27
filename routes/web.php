@@ -42,3 +42,4 @@ Route::post('/add_appointment/{child}',[AppointmentController::class,'add_appoin
 
 Route::get('/kids_Record/{child}',[KidsController::class,'show_kids_recrd'])->middleware('auth.check');
 Route::delete('/delete_kid/{child}',[KidsController::class,'delete_kid'])->middleware('auth.check');
+Route::get('/markeRead',[VaccinesController::class,'markAsRead'])->middleware('auth.check');
